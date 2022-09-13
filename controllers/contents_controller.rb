@@ -1,5 +1,5 @@
 require './models/content'
 
-get '/content' do
+get '/contents' do
     "Woah, hello content!!!"
 end
