@@ -1,0 +1,1 @@
+puts "content.rb is required"

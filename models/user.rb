@@ -1,0 +1,1 @@
+puts "user.rb is required"
