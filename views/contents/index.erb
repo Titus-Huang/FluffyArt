@@ -18,10 +18,16 @@
             - get this laid out, 3 wide and then infinite DOWN
             - able to view each item in the gallery
             - if you are the owner of the items, to be able to edit/delete them
-            - Cloudinary working
             %>
+                <% three_row = 0 %>
                 <% contents.each do |content| %>
-                    <section class="content-display-gallery-content">
+                    <% if three_row == 0 %>
+                        <section class="content-display-gallery-content-row">
+                    <% end %>
+
+                    <% three_row += 1 %>
+
+                    <section class="content-display-gallery-content-column">
                         <% if content['is_image'] == 't' && content['is_html'] == 'f' %>
                             <img src="<%= content['content'] %>" alt="">
                         <% elsif content['is_image'] == 'f' && content['is_html'] == 't' %>
@@ -35,6 +41,11 @@
                         <br>
                         by <a href="/profiles/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
                     </section>
+                    
+                    <% if three_row == 3 %>
+                        </section>
+                        <% three_row = 0 %>
+                    <% end %>
                 <% end %>
             <% end %>
         </div>
