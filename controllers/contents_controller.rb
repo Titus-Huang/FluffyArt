@@ -66,7 +66,7 @@ get '/contents/view/:id' do
 
     site_render = erb(:'shared/nav', layout: false) + erb(:'contents/view', layout: false, locals: { content: content }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
-        page_title: content[:title]
+        page_title: content['title']
     }
 end
 
