@@ -9,7 +9,7 @@ get '/contents' do
     contents = all_contents()
 
     erb :'contents/index', locals: {
-        page_title: "Gallery view"
+        page_title: "Gallery view",
         contents: contents
     }
 end

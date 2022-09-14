@@ -6,8 +6,17 @@
     background-color: lightgray;
 
     width: 200px;
-    height: 300px;
+    height: 250px;
+    max-width: 350px;
+    max-height: 500px;
     padding: 1rem;
 
     border: 2px solid grey;
+}
+
+.content-display-gallery img {
+    width: 180px;
+    height: 180px;
+    max-width: 330px;
+    max-height: 330px;
 }

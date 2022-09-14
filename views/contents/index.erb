@@ -30,18 +30,18 @@
     </div>
 
     <div>
-        <p>content display here</p>
-        <% if contents.length == 0 %>
+        <% if count_all_content() == 0 %>
             <p>There is no content yet, please add some content.</p>
         <% else %>
             <% contents.each do |content| %>
                 <section class="content-display-gallery">
-                    <% if content['is_image'] && !content['is_text'] %>
+                    <% if content['is_image'] == 't' && content['is_text'] == 'f' %>
                         <img src="<%= content['content'] %>" alt="">
-                    <% elsif !content['is_image'] && content['is_text'] %>
+                    <% elsif content['is_image'] == 'f' && content['is_text'] == 't' %>
                         <p><%= content['content'] %></p>
                     <% else %>
-                        <%= content['content'].html_safe %>
+                        <%= content['content'] %>
+                        <p>This should be in HTML</p>
                     <% end %>
                 </section>
             <% end %>

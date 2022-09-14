@@ -3,6 +3,10 @@ def all_contents
     run_sql("SELECT * FROM contents ORDER BY post_timestamp")
 end
 
+def count_all_content
+    run_sql("SELECT COUNT(*) from contents")[0][:count].to_i
+end
+
 def latest_20_contents
     run_sql("SELECT * FROM contents ORDER BY post_timestamp LIMIT 20")
 end
