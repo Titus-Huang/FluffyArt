@@ -2,7 +2,8 @@ require './models/user'
 
 get '/users/new' do
 
-    erb :'users/new', locals: {
+    site_render = erb(:'shared/nav', layout: false) + erb(:'users/new', layout: false)
+    erb site_render, locals: {
         page_title: "Create new account"
     }
 end

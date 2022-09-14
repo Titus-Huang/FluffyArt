@@ -8,25 +8,40 @@ require './models/content'
 get '/contents' do
     contents = all_contents()
 
-    erb :'contents/index', locals: {
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/index', layout: false)
+    erb site_render, locals: {
         page_title: "Gallery view",
         contents: contents
     }
 end
 
-# get '/foods/new' do
-#     erb :'foods/new'
-# end
+get '/contents/new' do
 
-# post '/foods' do
-#     name = params['name']
-#     image_url = params['image_url']
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/new', layout: false)
+    erb site_render, locals: {
+        page_title: "Post content"
+    }
+end
 
-#     create_food(name, image_url)
+post '/contents' do
+    user_id = session['user_id']
+    title = params['title']
+    content = params['content']
+    content_description = params['content_description']
+    content_type = params['content_type']
 
-#     # if the request is NOT a GET request, then we must redirect instead of using erb.
-#     redirect '/'
-# end
+    is_html = false
+    is_image = false
+    if content_type == "image"
+        is_image = true
+    elsif content_type == "html"
+        is_html = true
+    end
+
+    create_content(user_id, title, content, content_description, is_image, is_text)
+
+    redirect '/contents'
+end
 
 # # the :id is a route parameter
 # get '/foods/:id/edit' do

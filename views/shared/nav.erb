@@ -1,8 +1,9 @@
 <nav>
-    <div>
+    <div class="left-nav">
         <p><a href="/">Home</a></p>
+        <p><a href="/contents">Content Gallery</a></p>
     </div>
-    <div>
+    <div class="right-nav">
         <% if logged_in? %>
             <section class="controls">
                 <form action="/sessions" method="POST">

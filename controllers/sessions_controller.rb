@@ -1,6 +1,8 @@
 
 get '/sessions/new' do
-    erb :'sessions/new', locals: {
+
+    site_render = erb(:'shared/nav', layout: false) + erb(:'sessions/new', layout: false)
+    erb site_render, locals: {
         page_title: "Log in"
     }
 end
@@ -16,6 +18,8 @@ post '/sessions' do
 
         redirect '/'
     end
+    
+    puts ">>> WARNING: Log-in failed <<<"
 end
 
 delete '/sessions' do

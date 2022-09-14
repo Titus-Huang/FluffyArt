@@ -12,8 +12,10 @@ enable :sessions
 
 # Landing page
 get '/' do
-    username = 
-    erb :index, locals: {
+    username = ""
+
+    site_render = erb(:'shared/nav', layout: false) + erb(:index, layout: false)
+    erb site_render, locals: {
         page_title: "Welcome"
     }
 end

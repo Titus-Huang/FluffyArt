@@ -1,25 +1,8 @@
-<h1>Contents</h1>
-
 <hr>
 
-<nav>
-    <div>
-        <p><a href="/">Home</a></p>
-    </div>
-    <div>
-        <% if logged_in? %>
-            <section class="controls">
-                <form action="/sessions" method="POST">
-                    <input type="hidden" name="_method" value="delete">
-                    <button>Logout</button>
-                </form>
-            </section>
-        <% else %>
-            <p><a href="/users/new">Sign up</a></p>
-            <p><a href="/sessions/new">Log in</a></p>
-        <% end %>
-    </div>
-</nav>
+<header>
+    <h1>Content Gallery</h1>
+</header>
 
 <hr>
 
