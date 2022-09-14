@@ -8,7 +8,7 @@ require './models/content'
 get '/contents' do
     contents = all_contents()
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/index', layout: false, locals: { contents: contents })
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/index', layout: false, locals: { contents: contents }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
         page_title: "Gallery view"
     }
@@ -16,7 +16,7 @@ end
 
 get '/contents/new' do
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/new', layout: false)
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/new', layout: false) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
         page_title: "Post content"
     }
@@ -64,7 +64,7 @@ get '/contents/view/:id' do
     id = params['id']
     content = get_content(id)
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/view', layout: false, locals: { content: content })
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/view', layout: false, locals: { content: content }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
         page_title: content[:title]
     }
