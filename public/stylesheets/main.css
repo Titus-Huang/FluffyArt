@@ -45,13 +45,28 @@ nav div p a {
     text-decoration: none;
 }
 
+footer {
+    color: whitesmoke;
+    background-color: mediumaquamarine;
+    padding: 2rem;
+
+    /* Sticky footer some day... */
+    /* bottom: 0; */
+    width: 100vw;
+    position: fixed;
+}
+
+footer a {
+    text-decoration: none;
+}
+
 .content-display-gallery-content {
     background-color: lightgray;
 
     width: 300px;
-    height: 450px;
+    height: 400px;
     max-width: 300px;
-    max-height: 550px;
+    max-height: 450px;
 
     padding: 1rem;
 
@@ -62,5 +77,5 @@ nav div p a {
     width: 290px;
     height: 290px;
     max-width: 290px;
-    max-height: 450px;
+    max-height: 400px;
 }

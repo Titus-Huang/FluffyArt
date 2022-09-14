@@ -14,7 +14,7 @@ enable :sessions
 get '/' do
     username = ""
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:index, layout: false)
+    site_render = erb(:'shared/nav', layout: false) + erb(:index, layout: false) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
         page_title: "Welcome"
     }

@@ -1,0 +1,6 @@
+<footer>
+    <div>
+        <p>Made with &hearts; in Adealide by <a href="https://github.com/titus-huang">Titus Huang</a></p>
+        <p>Licenced under the MIT Licence &copy; 2022 - <%= run_sql("SELECT EXTRACT(year from now())")[0]['date_part'] %></p>
+    </div>
+</footer>
