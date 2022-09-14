@@ -11,8 +11,8 @@ def latest_20_contents
     run_sql("SELECT * FROM contents ORDER BY post_timestamp LIMIT 20")
 end
 
-def create_content(user_id, title, content, is_image, is_text)
-    run_sql("INSERT INTO contents(user_id, post_timestamp, edit_timestamp, title, content, is_image, is_text) VALUES($1, now(), TO_TIMESTAMP(0), $2, $3, $4, $5)", [user_id, title, content, is_image, is_text])
+def create_content(user_id, title, content, content_description, is_image, is_text)
+    run_sql("INSERT INTO contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_text) VALUES($1, now(), TO_TIMESTAMP(0), $2, $3, $4, $5)", [user_id, title, content, content_description, is_image, is_text])
 end
 
 def get_content(id)

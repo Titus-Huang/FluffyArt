@@ -22,6 +22,7 @@ CREATE TABLE contents(
     edit_timestamp TIMESTAMP,
     title TEXT,
     content TEXT,
+    content_description TEXT,
     is_image BOOLEAN,
     is_text BOOLEAN
 );
@@ -30,6 +31,8 @@ CREATE TABLE contents(
 TRUNCATE TABLE contents;
 ALTER SEQUENCE contents_id_seq RESTART WITH 1;
 
+-- change from is_text to is_html LATER ON
+
 -- Seed example content
-INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, is_image, is_text)
-VALUES(1, now(), TO_TIMESTAMP(0), 'Yoooooo, Western Australia!', 'https://files.treblesketch.com/2021/03/688c8f2d551cd4ed_2021-03-13.png', true, false);
+INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_text)
+VALUES(1, now(), TO_TIMESTAMP(0), 'Yoooooo, Western Australia!', 'It sure has been a pretty exciting past few hours, the past few years has been a rollercoaster and tonight is definitely NOT an exception!', 'https://files.treblesketch.com/2021/03/688c8f2d551cd4ed_2021-03-13.png', true, false);

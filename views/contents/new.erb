@@ -1,1 +1,47 @@
 
+<h1>Add new content</h1>
+
+<hr>
+
+<nav>
+    <div>
+        <p><a href="/">Home</a></p>
+    </div>
+    <div>
+        <% if logged_in? %>
+            <section class="controls">
+                <form action="/sessions" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Logout</button>
+                </form>
+            </section>
+        <% else %>
+            <p><a href="/users/new">Sign up</a></p>
+            <p><a href="/sessions/new">Log in</a></p>
+        <% end %>
+    </div>
+</nav>
+
+<hr>
+
+<section>
+    <div>
+        <form action="/contents" method="POST">
+            <label for="">Title: </label>
+            <input type="text" name="title">
+
+            <label for="">Content: </label>
+            <input type="text" name="content">
+
+            <label for="">Description: </label>
+            <input type="text" name="content-description">
+
+            <select name="content-type" id="">
+                <option value="image">Image-only</option>
+                <option value="text">Text-only</option>
+            </select>
+
+            <button>Post Content</button>
+        </form>
+    </div>
+</section>
