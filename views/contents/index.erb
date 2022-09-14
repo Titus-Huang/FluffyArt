@@ -10,27 +10,24 @@
             <p><a href="/contents/new">Add Content</a></p>
         </div>
 
-        <div>
-            <p>Count all content: <%= count_all_content() %></p>
-            <p><%= contents[0] %></p>
-
+        <div class="content-display-gallery">
             <% if count_all_content() == 0 %>
                 <p>There is no content yet, please add some content.</p>
             <% else %>
                 <% contents.each do |content| %>
-                    <section class="content-display-gallery">
-                        <% if content['is_image'] == 't' && content['is_text'] == 'f' %>
+                    <section class="content-display-gallery-content">
+                        <% if content['is_image'] == 't' && content['is_html'] == 'f' %>
                             <img src="<%= content['content'] %>" alt="">
-                        <% elsif content['is_image'] == 'f' && content['is_text'] == 't' %>
-                            <p><%= content['content'] %></p>
-                        <% else %>
+                        <% elsif content['is_image'] == 'f' && content['is_html'] == 't' %>
                             <%= content['content'] %>
                             <p>This should be in HTML</p>
+                        <% else %>
+                            <p><%= content['content'] %></p>
                         <% end %>
 
-                        <p><a href="/contents/<%= content['id'] %>"><%= content['is_image'] %></a>
+                        <p><a href="/contents/view/<%= content['id'] %>"><%= content['title'] %></a>
                         <br>
-                        <a href=""></a></p>
+                        by <a href="/profiles/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
                     </section>
                 <% end %>
             <% end %>

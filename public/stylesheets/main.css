@@ -45,21 +45,22 @@ nav div p a {
     text-decoration: none;
 }
 
-.content-display-gallery {
+.content-display-gallery-content {
     background-color: lightgray;
 
-    width: 200px;
-    height: 250px;
-    max-width: 350px;
-    max-height: 500px;
+    width: 300px;
+    height: 450px;
+    max-width: 300px;
+    max-height: 550px;
+
     padding: 1rem;
 
     border: 2px solid grey;
 }
 
-.content-display-gallery img {
-    width: 180px;
-    height: 180px;
-    max-width: 330px;
-    max-height: 330px;
+.content-display-gallery-content img {
+    width: 290px;
+    height: 290px;
+    max-width: 290px;
+    max-height: 450px;
 }
