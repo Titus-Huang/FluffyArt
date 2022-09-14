@@ -5,30 +5,29 @@
                 <% if content['is_image'] == 't' %>
                     <%= transform_images_limit_by_width(content['content'], content['title'], 1024) %>
                 <% else %>
-                    <p><%= content['content'] %></p>
+                    <p class="view-content-display-text"><%= content['content'] %></p>
                 <% end %>
             </section>
-            
-            <hr>
 
             <section class="view-content-description">
                 <div class="view-author-details">
                     <h2><%= content['title'] %></h2>
-                    <p>by <%= find_user_by_id(content['user_id'])['username'] %></p>
-                    <p>posted on: <%= content['post_timestamp'] %></p>
+                    <p>by <a href="/users/<% content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a> | posted on: <%= content['post_timestamp'].to_s.split('.')[0] %></p>
                 </div>
 
                 <hr>
-        
+
                 <div class="view-content-details">
                     <p><%= content['content_description'] %></p>
                 </div>
             </section>
         </section>
         <section class="view-sidebar">
-            <form action="">
-            <button>&#9733; Favourite</button>
-            </form>
+            <% if logged_in? %>
+                <form action="">
+                    <button class="view-sidebar-fav-btn">&#9733; Favourite</button>
+                </form>
+            <% end %>
             <br>
             <p><a href="">Download image</a></p>
         </section>

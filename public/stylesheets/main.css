@@ -8,6 +8,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'Roboto Slab', serif;
+    margin-top: 0;
 }
 
 .banner {
@@ -34,6 +35,14 @@ h1, h2, h3 {
 
 .view-content-display img {
     width: 100%;
+}
+
+.view-content-description, .view-content-display-text {
+    padding: 1rem;
+}
+
+.view-sidebar {
+    padding: 2rem;
 }
 
 main {
@@ -105,6 +114,11 @@ footer a {
     width: fit-content;
     max-width: 290px;
     max-height: 350px;
+}
+
+.view-sidebar-fav-btn {
+    height: 35px;
+    width: 100%;
 }
 
 @media screen and (max-width: 992px) {
