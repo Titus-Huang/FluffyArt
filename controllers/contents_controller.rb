@@ -43,6 +43,14 @@ post '/contents' do
     is_image = false
     if content_type == "image"
         is_image = true
+        image_upload = Cloudinary::Uploader.upload(content, 
+            :folder => "fluffyart-cdn/img/",
+            :use_filename => true,
+            :overwrite => true,
+            :resource_type => "image")
+        puts "Cloudinary upload has occured"
+        p image_upload
+        content = image_upload['secure_url']
     elsif content_type == "html"
         is_html = true
     end
@@ -52,7 +60,7 @@ post '/contents' do
     redirect '/contents'
 end
 
-get '/content/view/:id' do
+get '/contents/view/:id' do
     id = params['id']
     content = get_content(id)
 

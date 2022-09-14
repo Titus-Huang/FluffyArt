@@ -1,5 +1,9 @@
 
 def all_contents
+    run_sql("SELECT * FROM contents")
+end
+
+def all_contents_by_date
     run_sql("SELECT * FROM contents ORDER BY post_timestamp")
 end
 

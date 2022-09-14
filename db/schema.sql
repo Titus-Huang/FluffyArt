@@ -49,7 +49,7 @@ CREATE TABLE test_contents(
 
 -- heroku pg:reset --confirm fluffyart
 -- heroku pg:push fluffyart_db DATABASE_URL
-
+-- heroku pg:reset --confirm fluffyart && heroku pg:push fluffyart_db DATABASE_URL
 
 -- Seed example content
 INSERT INTO contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_html)
