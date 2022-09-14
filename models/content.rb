@@ -26,3 +26,13 @@ end
 def delete_content(id)
     run_sql("DELETE FROM contents WHERE id = $1", [id])
 end
+
+
+
+def truncate_content_string(string)
+    if string.length > 120
+        truncated_string = string.slice(0..120) + "..."
+        return truncated_string
+    end
+    string
+end
