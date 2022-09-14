@@ -43,12 +43,12 @@ post '/contents' do
     is_image = false
     if content_type == "image"
         is_image = true
-        image_upload = Cloudinary::Uploader.upload(content, 
+        image_upload = Cloudinary::Uploader.upload(content['tempfile'],
             :folder => "fluffyart-cdn/img/",
             :use_filename => true,
             :overwrite => true,
             :resource_type => "image")
-        puts "Cloudinary upload has occured"
+        puts "Images has been uploaded to Cloudinary"
         p image_upload
         content = image_upload['secure_url']
     elsif content_type == "html"

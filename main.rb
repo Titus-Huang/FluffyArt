@@ -5,6 +5,13 @@ require 'dotenv/load'
 require 'pg'
 require 'cloudinary'
 
+Cloudinary.config_from_url("cloudinary://#{ENV['API_KEY']}:#{ENV['API_SECRET']}@#{ENV['CLOUD_NAME']}")
+Cloudinary.config do |config|
+    config.secure = true
+end
+
+require './quickstart'
+
 require './db/db'
 
 # this makes the session hash work
