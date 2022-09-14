@@ -3,6 +3,7 @@ require 'bcrypt'
 require 'httparty'
 require 'dotenv/load'
 require 'pg'
+require 'cloudinary'
 
 require './db/db'
 

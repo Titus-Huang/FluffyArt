@@ -31,5 +31,5 @@ TRUNCATE TABLE contents;
 ALTER SEQUENCE contents_id_seq RESTART WITH 1;
 
 -- Seed example content
-INSERT INTO contents(user_id, post_timestamp, edit_timestamp, title, content, is_image, is_text)
-VALUES();
+INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, is_image, is_text)
+VALUES(1, now(), TO_TIMESTAMP(0), 'Yoooooo, Western Australia!', 'https://files.treblesketch.com/2021/03/688c8f2d551cd4ed_2021-03-13.png', true, false);

@@ -1,0 +1,50 @@
+
+<h1>Contents</h1>
+
+<hr>
+
+<nav>
+    <div>
+        <p><a href="/">Home</a></p>
+    </div>
+    <div>
+        <% if logged_in? %>
+            <section class="controls">
+                <form action="/sessions" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Logout</button>
+                </form>
+            </section>
+        <% else %>
+            <p><a href="/users/new">Sign up</a></p>
+            <p><a href="/sessions/new">Log in</a></p>
+        <% end %>
+    </div>
+</nav>
+
+<hr>
+
+<section>
+    <div>
+        <p><a href="/contents/new">Add Content</a></p>
+    </div>
+
+    <div>
+        <p>content display here</p>
+        <% if contents.length == 0 %>
+            <p>There is no content yet, please add some content.</p>
+        <% else %>
+            <% contents.each do |content| %>
+                <section class="content-display-gallery">
+                    <% if content['is_image'] && !content['is_text'] %>
+                        <img src="<%= content['content'] %>" alt="">
+                    <% elsif !content['is_image'] && content['is_text'] %>
+                        <p><%= content['content'] %></p>
+                    <% else %>
+                        <%= content['content'].html_safe %>
+                    <% end %>
+                </section>
+            <% end %>
+        <% end %>
+    </div>
+</section>
