@@ -1,0 +1,53 @@
+<main class="main-margins">
+    <header>
+        <h1>Edit existing Content</h1>
+    </header>
+
+    <hr>
+
+    <section>
+        <div>
+            <form action="/contents" method="POST" enctype="multipart/form-data">
+                <label for="title">Title: </label>
+                <input type="text" name="title">
+
+                <div id="content_text">
+                    <label for="content">Content: </label>
+                    <input type="text" name="content">
+                </div>
+
+                <div id="content_image">
+                    <label for="content">Content: </label>
+                    <input type="file" accept="image/*" name="content">
+                </div>
+
+                <label for="content_description">Description: </label>
+                <input type="text" name="content_description">
+
+                <label for="content_type">Content-type: </label>
+                <select name="content_type" id="content_type">
+                    <option value="image">Image-only</option>
+                    <option value="text">Text-only</option>
+                </select>
+
+                <button>Post Content</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        function toggleFormFields(event) {
+            toggleValue = document.getElementById("content_type").value;
+            if (toggleValue == "image") {
+                document.getElementById("content_image").style.display = 'block';
+                document.getElementById("content_text").style.display = 'none';
+            } else if (toggleValue == "text") {
+                document.getElementById("content_image").style.display = 'none';
+                document.getElementById("content_text").style.display = 'block';
+            }
+        }
+
+        document.getElementById("content_type").addEventListener("change", toggleFormFields);
+
+        document.addEventListener('DOMContentLoaded', toggleFormFields);
+    </script>
+</main>

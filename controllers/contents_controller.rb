@@ -70,15 +70,15 @@ get '/contents/view/:id' do
     }
 end
 
-# # the :id is a route parameter
-# get '/foods/:id/edit' do
-#     id = params['id']
-#     food = get_food(id)
+get '/contents/:id/edit' do
+    id = params['id']
+    content = get_content(id)
     
-#     erb :'foods/edit', locals: {
-#         food: food
-#     }
-# end
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/edit', layout: false, locals: { content: content }) + erb(:'shared/footer', layout: false)
+    erb site_render, locals: {
+        content: content
+    }
+end
 
 # put '/foods/:id' do
 #     id = params['id']
