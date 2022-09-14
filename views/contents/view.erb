@@ -27,9 +27,25 @@
                 <form action="">
                     <button class="view-sidebar-fav-btn">&#9733; Favourite</button>
                 </form>
+
+                <br>
             <% end %>
-            <br>
             <p><a href="">Download image</a></p>
+
+            <% unless logged_in? && session['user_id'] == content['user_id'] %>
+                <hr>
+                <h3>Content Editor</h3>
+                <%# <p><a href="/contents/<%= content['id'] % > /edit">Edit</a></p> %>
+                <div class="view-content-creator-controls">
+                    <form action="/contents/<%= content['id'] %>" method="POST">
+                        <button>Edit</button>
+                    </form>
+                    <form action="/contents/<%= content['id'] %>" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <button>Delete</button>
+                    </form>
+                </div>
+            <% end %>
         </section>
     </div>
 </main>

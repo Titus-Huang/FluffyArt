@@ -33,6 +33,10 @@ h1, h2, h3 {
     min-width: 250px;
 }
 
+.view-content-display {
+    background-color: dimgrey;
+}
+
 .view-content-display img {
     width: 100%;
 }
@@ -82,7 +86,7 @@ footer {
     /* Sticky footer some day... */
     /* bottom: 0; */
     width: 100vw;
-    position: fixed;
+    /* position: fixed; */
 }
 
 footer a {
@@ -121,6 +125,16 @@ footer a {
     width: 100%;
 }
 
+.view-content-creator-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-content-creator-controls button {
+    height: 35px;
+    width: 100px;
+}
+
 @media screen and (max-width: 992px) {
     body {
         max-width: 90vw;
@@ -133,4 +147,8 @@ footer a {
         align-items: center;
         flex-direction: column;
     }
+}
+
+.main-margins {
+    margin: 2rem auto;
 }
