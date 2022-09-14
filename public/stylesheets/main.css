@@ -1,5 +1,16 @@
 
 body {
+    margin: 0;
+}
+
+.banner {
+    width: 100vw;
+    height: 20vh;
+
+    background-color: mediumaquamarine;
+}
+
+main {
     margin: 0 auto;
     max-width: 75vw;
 }
@@ -13,14 +24,25 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    height: 7vh;
+    align-items: center;
+
+    background-color: darkslategray;
 }
 
 nav div {
+    display: flex;
+    gap: 2rem;
     margin: 0.5rem 2rem;
 }
 
 nav div p {
     margin: 0;
+}
+
+nav div p a {
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 .content-display-gallery {

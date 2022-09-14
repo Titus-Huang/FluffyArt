@@ -1,21 +1,22 @@
-<hr>
+<main>
+    <header>
+        <h1>Log in</h1>
+    <header>
 
-<header>
-    <h1>Log in</h1>
-<header>
+    <hr>
 
-<hr>
+    <section class="data-handling">
+        <form action="/sessions" method="POST">
+            <%# Username or email in the future %>
 
-<section class="data-handling">
-    <form action="/sessions" method="POST">
-        <%# Username or email in the future %>
+            <label for="">Username: </label>
+            <input type="text" name="username">
 
-        <label for="">Username: </label>
-        <input type="text" name="username">
+            <label for="">Password: </label>
+            <input type="password" name="password">
 
-        <label for="">Password: </label>
-        <input type="password" name="password">
+            <button>Log in</button>
+        </form>
+    </section>
 
-        <button>Log in</button>
-    </form>
-</section>
+</main>

@@ -1,30 +1,30 @@
-<hr>
+<main>
+    <header>
+        <h1>Add new Content</h1>
+    </header>
 
-<header>
-    <h1>Add new Content</h1>
-</header>
+    <hr>
 
-<hr>
+    <section>
+        <div>
+            <form action="/contents" method="POST">
+                <label for="title">Title: </label>
+                <input type="text" name="title">
 
-<section>
-    <div>
-        <form action="/contents" method="POST">
-            <label for="">Title: </label>
-            <input type="text" name="title">
+                <label for="content">Content: </label>
+                <input type="text" name="content">
 
-            <label for="">Content: </label>
-            <input type="text" name="content">
+                <label for="content_description">Description: </label>
+                <input type="text" name="content_description">
 
-            <label for="">Description: </label>
-            <input type="text" name="content_description">
+                <label for="content_type">Content-type: </label>
+                <select name="content_type" id="content_type">
+                    <option value="image">Image-only</option>
+                    <option value="text">Text-only</option>
+                </select>
 
-            <label for="">Content-type: </label>
-            <select name="content_type" id="">
-                <option value="image">Image-only</option>
-                <option value="text">Text-only</option>
-            </select>
-
-            <button>Post Content</button>
-        </form>
-    </div>
-</section>
+                <button>Post Content</button>
+            </form>
+        </div>
+    </section>
+</main>

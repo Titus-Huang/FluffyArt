@@ -1,6 +1,5 @@
 
 get '/sessions/new' do
-
     site_render = erb(:'shared/nav', layout: false) + erb(:'sessions/new', layout: false)
     erb site_render, locals: {
         page_title: "Log in"
