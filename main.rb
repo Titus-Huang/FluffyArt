@@ -6,13 +6,14 @@ require 'pg'
 
 require './db/db'
 
+# this makes the session hash work
+enable :sessions
+
 # Landing page
 get '/' do
-    # HTTParty.get("https://ombdapi.com?apikey=#{ENV['OMDB_API_KEY']}&t=jaws").to_s
-
-
+    username = 
     erb :index, locals: {
-        page_title: "Home"
+        page_title: "Welcome"
     }
 end
 

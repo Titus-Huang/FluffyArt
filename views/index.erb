@@ -1,4 +1,28 @@
-<h1>hi</h1>
+<h1>Welcome</h1>
 
-<p><a href="/users/new">Sign up</a></p>
-<p><a href="/sessions/new">Log in</a></p>
+<hr>
+
+<nav>
+    <% if logged_in? %>
+        <section class="controls">
+            <form action="/sessions" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Logout</button>
+            </form>
+        </section>
+    <% else %>
+        <p><a href="/users/new">Sign up</a></p>
+        <p><a href="/sessions/new">Log in</a></p>
+    <% end %>
+</nav>
+
+<hr>
+
+<section>
+    <p>Content display here</p>
+
+    <% if logged_in? %>
+        <h2>Welcome <%= current_user['username'] %></h2>
+        <p>SPECIAL CONTENT THAT IS SHOWN TO MEMBERS ONLY</p>
+    <% end %>
+</section>
