@@ -11,6 +11,15 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
+#site-title {
+    margin: 0 auto;
+    color: antiquewhite;
+}
+
+#site-emoji {
+    color: chocolate;
+}
+
 .banner {
     width: 100vw;
     height: 20vh;
@@ -70,7 +79,7 @@ nav div {
 }
 
 nav div p {
-    margin: 0;
+    margin: auto 0;
 }
 
 nav div p a {
