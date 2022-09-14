@@ -29,7 +29,7 @@
 
                     <section class="content-display-gallery-content-column">
                         <% if content['is_image'] == 't' && content['is_html'] == 'f' %>
-                            <img src="<%= content['content'] %>" alt="">
+                            <%= transform_images_limit_by_width(content['content'], content['title'], 356) %>
                         <% elsif content['is_image'] == 'f' && content['is_html'] == 't' %>
                             <%= content['content'] %>
                             <p>This should be in HTML</p>

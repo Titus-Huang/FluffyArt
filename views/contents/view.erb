@@ -1,25 +1,36 @@
 <main>
-    <section class="view-content-display">
-        <% if content['is_image'] == 't' %>
-            <img src="<%= content['content'] %>" alt="<%= content['title'] %>">
-        <% else %>
-            <p><%= content['content'] %></p>
-        <% end %>
-    </section>
+    <div class="view">
+        <section class="view-content">
+            <section class="view-content-display">
+                <% if content['is_image'] == 't' %>
+                    <%= transform_images_limit_by_width(content['content'], content['title'], 1024) %>
+                <% else %>
+                    <p><%= content['content'] %></p>
+                <% end %>
+            </section>
+            
+            <hr>
 
-    <hr>
+            <section class="view-content-description">
+                <div class="view-author-details">
+                    <h2><%= content['title'] %></h2>
+                    <p>by <%= find_user_by_id(content['user_id'])['username'] %></p>
+                    <p>posted on: <%= content['post_timestamp'] %></p>
+                </div>
 
-    <section class="view-content-description">
-        <div class="view-author-details">
-            <h2><%= content['title'] %></h2>
-            <p>by <%= find_user_by_id(content['user_id'])['username'] %></p>
-            <p>posted on: <%= content['post_timestamp'] %></p>
-        </div>
-
-        <hr>
+                <hr>
         
-        <div class="view-content-details">
-            <p><%= content['content-description'] %></p>
-        </div>
-    </section>
+                <div class="view-content-details">
+                    <p><%= content['content_description'] %></p>
+                </div>
+            </section>
+        </section>
+        <section class="view-sidebar">
+            <form action="">
+            <button>&#9733; Favourite</button>
+            </form>
+            <br>
+            <p><a href="">Download image</a></p>
+        </section>
+    </div>
 </main>

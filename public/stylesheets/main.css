@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body {
     margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto Slab', serif;
 }
 
 .banner {
@@ -8,6 +15,25 @@ body {
     height: 20vh;
 
     background-color: mediumaquamarine;
+}
+
+.view {
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.view-content {
+    border: 5px solid brown;
+}
+
+.view-sidebar {
+    border: 5px solid green;
+    min-width: 250px;
+}
+
+.view-content-display img {
+    width: 100%;
 }
 
 main {
