@@ -8,10 +8,9 @@ require './models/content'
 get '/contents' do
     contents = all_contents()
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/index', layout: false)
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/index', layout: false, locals: { contents: contents })
     erb site_render, locals: {
-        page_title: "Gallery view",
-        contents: contents
+        page_title: "Gallery view"
     }
 end
 
@@ -25,6 +24,16 @@ end
 
 post '/contents' do
     user_id = session['user_id']
+
+    print "session ==> "
+    p session
+    p user_id
+
+    if user_id == nil
+        puts ">>> ERROR: Unable to post content, not logged in <<<"
+        redirect '/contents'
+    end
+
     title = params['title']
     content = params['content']
     content_description = params['content_description']
@@ -38,9 +47,19 @@ post '/contents' do
         is_html = true
     end
 
-    create_content(user_id, title, content, content_description, is_image, is_text)
+    create_content(user_id, title, content, content_description, is_image, is_html)
 
     redirect '/contents'
+end
+
+get '/content/view/:id' do
+    id = params['id']
+    content = get_content(id)
+
+    site_render = erb(:'shared/nav', layout: false) + erb(:'contents/view', layout: false, locals: { content: content })
+    erb site_render, locals: {
+        page_title: content[:title]
+    }
 end
 
 # # the :id is a route parameter

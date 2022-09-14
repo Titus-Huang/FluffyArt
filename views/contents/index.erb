@@ -11,6 +11,9 @@
         </div>
 
         <div>
+            <p>Count all content: <%= count_all_content() %></p>
+            <p><%= contents[0] %></p>
+
             <% if count_all_content() == 0 %>
                 <p>There is no content yet, please add some content.</p>
             <% else %>
@@ -25,7 +28,7 @@
                             <p>This should be in HTML</p>
                         <% end %>
 
-                        <p><a href="<%= content['id'] %>"><%= content['is_image'] %></a>
+                        <p><a href="/contents/<%= content['id'] %>"><%= content['is_image'] %></a>
                         <br>
                         <a href=""></a></p>
                     </section>

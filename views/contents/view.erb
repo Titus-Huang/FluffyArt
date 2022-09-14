@@ -1,0 +1,25 @@
+<main>
+    <section class="view-content-display">
+        <% if content['is_image'] == 't' %>
+            <img src="<%= content['content'] %>" alt="<%= content['title'] %>">
+        <% else %>
+            <p><%= content['content'] %></p>
+        <% end %>
+    </section>
+
+    <hr>
+
+    <section class="view-content-description">
+        <div class="view-author-details">
+            <h2><%= content['title'] %></h2>
+            <p>by <%= find_user_by_id(content['user_id'])[:username] %></p>
+            <p>posted on: <%= content['post_timestamp'] %></p>
+        </div>
+
+        <hr>
+        
+        <div class="view-content-details">
+            <p><%= content['content-description'] %></p>
+        </div>
+    </section>
+</main>

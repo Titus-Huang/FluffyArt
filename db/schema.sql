@@ -54,3 +54,9 @@ CREATE TABLE test_contents(
 -- Seed example content
 INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_html)
 VALUES(1, TO_TIMESTAMP(1647173520), TO_TIMESTAMP(0), 'Yoooooo, Western Australia!', 'https://files.treblesketch.com/2021/03/688c8f2d551cd4ed_2021-03-13.png', 'It sure has been a pretty exciting past few hours, the past few years has been a rollercoaster and tonight is definitely NOT an exception!', true, false);
+
+INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_html)
+VALUES();
+
+INSERT INTO test_contents(user_id, post_timestamp, edit_timestamp, title, content, content_description, is_image, is_html)
+VALUES();
