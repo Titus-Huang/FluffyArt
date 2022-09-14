@@ -48,6 +48,8 @@ h1, h2, h3 {
 
 .view-content-display img {
     width: 100%;
+    margin: 0 auto;
+    display: block;
 }
 
 .view-content-description, .view-content-display-text {

@@ -30,8 +30,9 @@
 
                 <br>
             <% end %>
-            <p><a href="">Download image</a></p>
+            <p><a href="<%= content['content'] %>" download>Download image</a></p>
 
+            <%# CHANGE unless TO if WHEN IN PRODUCTION %>
             <% unless logged_in? && session['user_id'] == content['user_id'] %>
                 <hr>
                 <h3>Content Editor</h3>

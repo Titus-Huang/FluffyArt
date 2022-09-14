@@ -1,9 +1,5 @@
 require './models/content'
 
-# get '/contents' do
-#     "Woah, hello content!!!"
-# end
-
 
 get '/contents' do
     contents = all_contents()
@@ -25,13 +21,16 @@ end
 post '/contents' do
     user_id = session['user_id']
 
-    print "session ==> "
-    p session
-    p user_id
+    # print "session ==> "
+    # p session
+    # p user_id
 
     if user_id == nil
-        puts ">>> ERROR: Unable to post content, not logged in <<<"
-        redirect '/contents'
+        # puts ">>> ERROR: Unable to post content, not logged in <<<"
+        # redirect '/contents'
+
+        # temporary until things are ready
+        user_id = 1
     end
 
     title = params['title']
@@ -90,13 +89,13 @@ end
 #     redirect '/'
 # end
 
-# delete '/foods/:id' do
-#     id = params['id']
+delete '/contents/:id' do
+    id = params['id']
 
-#     delete_food(id)
+    delete_content(id)
 
-#     redirect '/'
-# end
+    redirect '/contents'
+end
 
 # post '/foods/:id/likes' do
 #     food_id = params['id']
