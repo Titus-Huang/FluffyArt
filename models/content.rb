@@ -47,6 +47,7 @@ def transform_images_limit_by_width(image_url, alt_text, width)
         arr = image_url.split("upload/")
         transform_url = arr[0] + "upload/" + "c_scale,w_#{width}/" + arr[1]
     else
+        puts ">>> WARNING: Not a Cloudinary link, image will not be rescaled <<<"
         transform_url = image_url
     end
     return "<img src=\"#{transform_url}\" alt=\"#{alt_text}\">"
@@ -54,4 +55,13 @@ end
 
 def transform_images_limit_by_height(image_url, alt_text, height)
     # cl_image_tag(image_url, :folder => "fluffyart-cdn/img/alt/", :secure=>"true", :alt=> alt_text, :height=>height, :quality=>"auto", :fetch_format=>:auto)
+
+    if image_url.include? "https://res.cloudinary.com/"
+        arr = image_url.split("upload/")
+        transform_url = arr[0] + "upload/" + "c_scale,h_#{height}/" + arr[1]
+    else
+        puts ">>> WARNING: Not a Cloudinary link, image will not be rescaled <<<"
+        transform_url = image_url
+    end
+    return "<img src=\"#{transform_url}\" alt=\"#{alt_text}\">"
 end
