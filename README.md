@@ -1,7 +1,13 @@
 # FluffyArt
 Project 2 - SEiR 61 (Building Your First Full-stack Application) 
 
+---
+
 [Heroku live deploy](https://fluffyart.herokuapp.com/)
+
+[Project Trello page](https://trello.com/b/6DC7vPKO/project-2-seir61)
+
+---
 
 ![A Screenshot of the FluffyArt front page, showing a mostly green site and a dark green banner. Saying "welcome"](https://files.treblesketch.com/2022/09/21a3482a3378202a_2022-09-15.png)
 
@@ -15,15 +21,20 @@ Technology used
 
 * Ruby
 * Sinatra
+* PostgreSQL
 * Heroku
-* Cloudinary (backend image handling)
+* Cloudinary (back-end image handling)
 * Visual Studio Code (IDE)
 * Paint.NET (favicon)
+* Trello (project management)
+* Notion (note-taking)
 
 Development
 ---
 
 [Early Sketches](https://github.com/Titus-Huang/FluffyArt/blob/main/_concept-doodles/layouts.png), playing around with what the layout is envisoned to be.
+
+Trello and Notion has also been an incredibly useful tool to keep track of ideas/development progress and the like. Link to the [Trello board](https://trello.com/b/6DC7vPKO/project-2-seir61) and [Notion page](https://zenith-honesty-9ac.notion.site/Project-2-Building-Your-First-Full-stack-Application-2efb9e9367a5439ca8eb5c8f98ca84f5).
 
 Looking around for inspirations like deviantART, FurAffinity, pixiv, Tumblr, etc did help with helping me grasp what an art website should roughly have at a foundamental level.
 
