@@ -17,11 +17,22 @@ post '/users' do
     redirect '/'
 end
 
-post '/users/:id' do
-    id = params['id']
+get '/profiles' do
+    profiles = get_users()
 
-    site_render = erb(:'shared/nav', layout: false) + erb(:'users/profile', layout: false) + erb(:'shared/footer', layout: false)
+    site_render = erb(:'shared/nav', layout: false) + erb(:'users/profiles', layout: false, locals: { profiles: profiles }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
-        page_title: "#{find_user_by_id(id)['username']} - Profile"
+        page_title: "All Profiles"
+    }
+end
+
+get '/users/:id' do
+    id = params['id']
+    profile_data = find_user_by_id(id)
+    content_posted = get_contents_by_user_id(id)
+
+    site_render = erb(:'shared/nav', layout: false) + erb(:'users/profile', layout: false, locals: { profile_data: profile_data, content_posted: content_posted }) + erb(:'shared/footer', layout: false)
+    erb site_render, locals: {
+        page_title: "#{profile_data['username']} - Profile"
     }
 end

@@ -3,7 +3,52 @@
         <h1>Profile</h1>
     </header>
 
+    <hr>
+
     <section>
-        <p>insert profile section here</p>
+        <div>
+            <h2><%= profile_data['username'] %></h2>
+            <p>Email: <a href="mailto:<%= profile_data['email'] %>"><%= profile_data['email'] %></a></p>
+            <p>Amount of content posted: <%= count_content_created_by_user_id(profile_data['id']) %></p>
+            <p>Here would be some profile data</p>
+        </div>
+
+        <hr>
+
+        <div class="profile-display-gallery">
+            <h2>Content Posted</h2>
+            <% if count_content_created_by_user_id(profile_data['id']) == 0 %>
+                <p>There is no content yet, please add some content.</p>
+            <% else %>
+                <% three_row = 0 %>
+                <% content_posted.each do |content| %>
+                    <% if three_row == 0 %>
+                        <section class="content-display-gallery-content-row">
+                    <% end %>
+
+                    <% three_row += 1 %>
+
+                    <section class="content-display-gallery-content-column">
+                        <% if content['is_image'] == 't' && content['is_html'] == 'f' %>
+                            <%= transform_images_limit_by_width(content['content'], content['title'], 356) %>
+                        <% elsif content['is_image'] == 'f' && content['is_html'] == 't' %>
+                            <%= content['content'] %>
+                            <p>This should be in HTML</p>
+                        <% else %>
+                            <p><%= truncate_content_string(content['content']) %></p>
+                        <% end %>
+
+                        <p><a href="/contents/view/<%= content['id'] %>"><%= content['title'] %></a>
+                        <br>
+                        by <a href="/profiles/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
+                    </section>
+                    
+                    <% if three_row == 3 %>
+                        </section>
+                        <% three_row = 0 %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
     </section>
 </main>

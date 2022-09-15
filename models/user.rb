@@ -18,3 +18,11 @@ end
 def find_user_by_id(id)
     run_sql("SELECT * FROM users WHERE id = $1", [id])[0]
 end
+
+def get_users()
+    run_sql("SELECT * FROM users")
+end
+
+def count_all_users
+    run_sql("SELECT COUNT(*) from users")[0]['count'].to_i
+end

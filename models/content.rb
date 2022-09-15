@@ -11,6 +11,10 @@ def count_all_content
     run_sql("SELECT COUNT(*) from contents")[0]['count'].to_i
 end
 
+def count_content_created_by_user_id(user_id)
+    run_sql("SELECT COUNT(*) from contents WHERE user_id = $1", [user_id])[0]['count'].to_i
+end
+
 def latest_5_contents
     run_sql("SELECT * FROM contents ORDER BY post_timestamp DESC LIMIT 5")
 end
@@ -25,6 +29,10 @@ end
 
 def get_content(id)
     run_sql("SELECT * FROM contents WHERE id = $1", [id])[0]
+end
+
+def get_contents_by_user_id(user_id)
+    run_sql("SELECT * FROM contents WHERE user_id = $1", [user_id])
 end
 
 def update_content(id, title, content, content_description, is_image, is_html)
