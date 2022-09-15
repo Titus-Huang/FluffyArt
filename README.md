@@ -58,4 +58,5 @@ Otherwise, one MAJOR problem would be that this site is not mobile-focused. It i
 ---
 
 Licenced under the MIT Licence
+
 **FluffyArt** by *Titus Huang* &copy; 2022
