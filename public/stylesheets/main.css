@@ -4,6 +4,8 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
+    /* background: #19812a; */
+    animation: background-anim 15s infinite;
 }
 
 h1, h2, h3 {
@@ -24,7 +26,8 @@ h1, h2, h3 {
     width: 100vw;
     height: 20vh;
 
-    background-color: mediumaquamarine;
+    background: rgb(66,189,147);
+    background: linear-gradient(90deg, rgba(66,189,147,1) 14%, rgba(53,233,149,1) 36%, rgba(37,226,134,1) 63%, rgba(66,227,149,1) 99%);
 }
 
 .view {
@@ -68,6 +71,7 @@ h1, h2, h3 {
 main {
     margin: 0 auto;
     max-width: 75vw;
+    background: #cdd2d0;
 }
 
 nav {
@@ -151,7 +155,7 @@ footer a {
 }
 
 .content-display-gallery-content-column {
-    background-color: lightgray;
+    background-color: #74c3af;
 
     width: 300px;
     height: auto;
@@ -213,6 +217,31 @@ footer a {
 
 /* Generic CSS Classes */
 
-.main-margins {
-    margin: 2rem auto;
+.main-paddings {
+    padding: 2rem;
+}
+
+
+/* Animation */
+
+@keyframes background-anim {
+    0% {
+        background: #19812a;
+    }
+
+    25% {
+        background: #47aa69;
+    }
+
+    50% {
+        background: #43cf4c;
+    }
+
+    75% {
+        background: #47aa69;
+    }
+
+    100% {
+        background: #19812a;
+    }
 }
