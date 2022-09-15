@@ -29,8 +29,8 @@ post '/contents' do
         # puts ">>> ERROR: Unable to post content, not logged in <<<"
         # redirect '/contents'
 
-        # temporary until things are ready
-        user_id = 1
+        # # temporary until things are ready
+        # user_id = 1
     end
 
     title = params['title']
@@ -93,10 +93,10 @@ end
 put '/contents/:id' do
     user_id = session['user_id']
 
-    if user_id == nil
-        # temporary until things are ready, as this will only be allowed to be accessed by the user who created this content
-        user_id = 1
-    end
+    # if user_id == nil
+    #     # temporary until things are ready, as this will only be allowed to be accessed by the user who created this content
+    #     user_id = 1
+    # end
 
     id = params['id']
     title = params['title']
