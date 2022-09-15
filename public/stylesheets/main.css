@@ -196,7 +196,24 @@ footer a {
     width: fit-content;
 }
 
+.front-page-btn {
+    margin: 2rem auto;
+}
 
+.front-page-btn button {
+    font-size: 2rem;
+    height: 80px;
+    width: 100%;
+    border-radius: 20px;
+
+    background-color: #74c3af;
+    color: whitesmoke;
+    transition: background-color 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.front-page-btn button:hover {
+    background-color: #5aa793;
+}
 
 
 

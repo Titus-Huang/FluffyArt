@@ -15,8 +15,8 @@ def count_content_created_by_user_id(user_id)
     run_sql("SELECT COUNT(*) from contents WHERE user_id = $1", [user_id])[0]['count'].to_i
 end
 
-def latest_5_contents
-    run_sql("SELECT * FROM contents ORDER BY post_timestamp DESC LIMIT 5")
+def latest_5_image_contents
+    run_sql("SELECT * FROM contents WHERE is_image = 't' ORDER BY post_timestamp DESC LIMIT 5")
 end
 
 def latest_25_contents

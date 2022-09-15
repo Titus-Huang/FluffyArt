@@ -19,9 +19,7 @@ enable :sessions
 
 # Landing page
 get '/' do
-    username = ""
-
-    site_render = erb(:'shared/nav', layout: false) + erb(:index, layout: false, locals: { contents: latest_5_contents }) + erb(:'shared/footer', layout: false)
+    site_render = erb(:'shared/nav', layout: false) + erb(:index, layout: false, locals: { contents: latest_5_image_contents }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {
         page_title: "Welcome"
     }
