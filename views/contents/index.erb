@@ -29,7 +29,7 @@
                             <%= content['content'] %>
                             <p>This should be in HTML</p>
                         <% else %>
-                            <p><%= truncate_content_string(content['content']) %></p>
+                            <p><%= truncate_content_string(content['content'], 360) %></p>
                         <% end %>
 
                         <p><a href="/contents/view/<%= content['id'] %>"><%= content['title'] %></a>

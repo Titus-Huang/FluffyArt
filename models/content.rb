@@ -45,9 +45,9 @@ end
 
 
 
-def truncate_content_string(string)
-    if string.length > 120
-        truncated_string = string.slice(0..120) + "..."
+def truncate_content_string(string, length)
+    if string.length > length
+        truncated_string = string.slice(0..length) + "..."
         return truncated_string
     end
     string
