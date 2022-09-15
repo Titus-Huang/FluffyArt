@@ -36,7 +36,7 @@
 
                         <p><a href="/contents/view/<%= content['id'] %>"><%= content['title'] %></a>
                         <br>
-                        by <a href="/profiles/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
+                        by <a href="/users/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
                     </section>
                     
                     <% if three_row == 3 %>
