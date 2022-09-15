@@ -6,9 +6,11 @@
     <hr>
 
     <section>
-        <div>
-            <p><a href="/contents/new">Add Content</a></p>
-        </div>
+        <% if logged_in? %>
+            <div>
+                <p><a href="/contents/new">Add Content</a></p>
+            </div>
+        <% end %>
 
         <div class="content-display-gallery">
             <% if count_all_content() == 0 %>
