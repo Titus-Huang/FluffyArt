@@ -54,6 +54,9 @@ def truncate_content_string(string, length)
 end
 
 def transform_images_limit_by_width(image_url, alt_text, width)
+    # image_tag(image_url, :type => :upload, 
+    #     :width => width, :crop=>"scale")
+    
     # cl_image_tag(image_url, :folder => "fluffyart-cdn/img/alt/", :secure=>"true", :alt=> alt_text, :width=>width, :quality=>"auto", :fetch_format=>:auto)
     if image_url.include? "https://res.cloudinary.com/"
         arr = image_url.split("upload/")
