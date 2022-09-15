@@ -81,7 +81,7 @@ get '/contents/:id/edit' do
         content_type_value = "text"
     end
     
-    p content_type_value
+    p content['id']
 
     site_render = erb(:'shared/nav', layout: false) + erb(:'contents/edit', layout: false, locals: { content: content, content_type_value: content_type_value }) + erb(:'shared/footer', layout: false)
     erb site_render, locals: {

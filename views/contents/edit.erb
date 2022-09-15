@@ -7,7 +7,7 @@
 
     <section>
         <div>
-            <form action="/contents" method="POST" enctype="multipart/form-data" class="content-form">
+            <form action="/contents/<%= content['id'] %>" method="POST" enctype="multipart/form-data" class="content-form">
                 <input type="hidden" name="_method" value="put">
                 <input type="hidden" name="content_type_value" id="content_type_value" value="<%= content_type_value %>">
 
