@@ -94,6 +94,27 @@ nav div p a {
     text-decoration: none;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pretty-form-btn {
+    height: 60px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    /* text-decoration: wavy; */
+}
+
+.content-form input {
+    width: 50vw;
+    
+    -webkit-box-shadow:inset 0 0 3px #000;
+    -moz-box-shadow:inset 0 0 3px #000;
+    box-shadow:inset 0 0 3px #000;
+}
+
 footer {
     color: whitesmoke;
     background-color: mediumaquamarine;
@@ -151,6 +172,19 @@ footer a {
     width: 100px;
 }
 
+
+
+
+
+/* Id tags */
+
+#content_text input, #content_description input {
+    height: 150px;
+}
+
+
+/* Media Queries */
+
 @media screen and (max-width: 992px) {
     body {
         max-width: 90vw;
@@ -164,6 +198,10 @@ footer a {
         flex-direction: column;
     }
 }
+
+
+
+/* Generic CSS Classes */
 
 .main-margins {
     margin: 2rem auto;
