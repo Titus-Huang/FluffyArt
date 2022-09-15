@@ -230,14 +230,14 @@ footer a {
 }
 
 #site-emoji {
+    display: inline-block;
     color: chocolate;
-    /* transition: transform 0.75s ease-in-out; */
+    transition: rotate-emoji 0.75s cubic-bezier(0.56, 0.24, 0.5, 0.85);
 }
 
 /* Animation is not working */
 #site-emoji:hover {
-    /* transform: rotate(360deg); */
-    animation: rotate-emoji 3s infinite;
+    animation: rotate-emoji 1.5s infinite;
 }
 
 
