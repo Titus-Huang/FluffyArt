@@ -46,6 +46,9 @@ end
 
 
 def truncate_content_string(string, length)
+    if string == nil
+        return ""
+    end
     if string.length > length
         truncated_string = string.slice(0..length) + "..."
         return truncated_string
