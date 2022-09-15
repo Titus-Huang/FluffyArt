@@ -10,7 +10,7 @@ Cloudinary.config do |config|
     config.secure = true
 end
 
-require './quickstart'
+# require './quickstart'
 
 require './db/db'
 
