@@ -87,11 +87,18 @@ nav div {
 
 nav div p {
     margin: auto 0;
+    color: whitesmoke;
 }
 
 nav div p a {
-    color: whitesmoke;
     text-decoration: none;
+    color: inherit;
+    transition: color 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+nav div p a:hover {
+    color: darkorange;
+    text-decoration: underline;
 }
 
 form {

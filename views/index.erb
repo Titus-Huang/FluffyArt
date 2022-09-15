@@ -6,11 +6,46 @@
     <hr>
 
     <section>
-        <p>Link to <a href="/contents">contents</a>.</p>
+        <div>
+            <h2>The newest artist friendly website!</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam adipisci porro facere laboriosam fugit nobis quibusdam omnis minima esse placeat distinctio id recusandae nulla corrupti totam, modi tempore, unde quae.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus ipsum commodi officiis repudiandae veniam ea, consequatur, placeat nihil magnam necessitatibus velit, delectus recusandae! Nisi reiciendis ratione tempore est cumque accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, sit perspiciatis esse nostrum quidem eveniet laudantium odio at reprehenderit reiciendis minus! Magnam, odio eos ad ratione quo cum ipsam ducimus!</p>
+            <p>Below, you'd see the latest 5 artworks that was posted by artists who uses our platform!</p>
+        </div>
 
-        <% if logged_in? %>
-            <h2>Welcome <%= current_user['username'] %></h2>
-            <p>SPECIAL CONTENT THAT IS SHOWN TO MEMBERS ONLY</p>
-        <% end %>
+        <div class="home-display-gallery">
+            <% if count_all_content() == 0 %>
+                <p>There is no content yet, please add some content.</p>
+            <% else %>
+                <% three_row = 0 %>
+                <% contents.each do |content| %>
+                    <% if three_row == 0 %>
+                        <section class="content-display-gallery-content-row">
+                    <% end %>
+
+                    <% three_row += 1 %>
+
+                    <section class="content-display-gallery-content-column">
+                        <% if content['is_image'] == 't' && content['is_html'] == 'f' %>
+                            <%= transform_images_limit_by_width(content['content'], content['title'], 356) %>
+                        <% elsif content['is_image'] == 'f' && content['is_html'] == 't' %>
+                            <%= content['content'] %>
+                            <p>This should be in HTML</p>
+                        <% else %>
+                            <p><%= truncate_content_string(content['content']) %></p>
+                        <% end %>
+
+                        <p><a href="/contents/view/<%= content['id'] %>"><%= content['title'] %></a>
+                        <br>
+                        by <a href="/profiles/<%= content['user_id'] %>"><%= find_user_by_id(content['user_id'])['username'] %></a></p>
+                    </section>
+                    
+                    <% if three_row == 3 %>
+                        </section>
+                        <% three_row = 0 %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
     </section>
 </main>

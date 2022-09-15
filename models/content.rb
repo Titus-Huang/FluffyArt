@@ -11,8 +11,12 @@ def count_all_content
     run_sql("SELECT COUNT(*) from contents")[0]['count'].to_i
 end
 
-def latest_20_contents
-    run_sql("SELECT * FROM contents ORDER BY post_timestamp LIMIT 20")
+def latest_5_contents
+    run_sql("SELECT * FROM contents ORDER BY post_timestamp DESC LIMIT 5")
+end
+
+def latest_25_contents
+    run_sql("SELECT * FROM contents ORDER BY post_timestamp DESC LIMIT 5")
 end
 
 def create_content(user_id, title, content, content_description, is_image, is_html)
