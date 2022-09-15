@@ -6,11 +6,18 @@
     <hr>
 
     <section>
-        <div>
-            <h2><%= profile_data['username'] %></h2>
-            <p>Email: <a href="mailto:<%= profile_data['email'] %>"><%= profile_data['email'] %></a></p>
-            <p>Amount of content posted: <%= count_content_created_by_user_id(profile_data['id']) %></p>
-            <p>Here would be some profile data</p>
+        <div class="profile-data">
+            <% unless profile_data['profile_image_url'] == nil || profile_data['profile_image_url'] == "" %>
+                <div>
+                    <img src="<%= profile_data['profile_image_url'] %>" alt="<%= profile_data['username'] %>'s profile picture" class="profile-image">
+                    </div>
+                <% end %>
+            <div>
+                <h2><%= profile_data['username'] %></h2>
+                <p>Email: <a href="mailto:<%= profile_data['email'] %>"><%= profile_data['email'] %></a></p>
+                <p>Amount of content posted: <%= count_content_created_by_user_id(profile_data['id']) %></p>
+                <p>Here would be some profile data</p>
+            </div>
         </div>
 
         <hr>

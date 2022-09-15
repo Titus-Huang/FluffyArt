@@ -19,9 +19,16 @@
                     <% three_row += 1 %>
 
                     <section class="content-display-gallery-content-column">
-                        <p><a href="/users/<%= profile['id'] %>"><%= profile['username'] %></a></p>
-                        <br>
-                        <p>Content posted: <%= count_content_created_by_user_id(profile['id']) %></p>
+                        <% unless profile['profile_image_url'] == nil || profile['profile_image_url'] == "" %>
+                            <div>
+                                <img src="<%= profile['profile_image_url'] %>" alt="<%= profile['username'] %>'s profile picture" class="profile-image">
+                            </div>
+                        <% end %>
+                        <div>
+                            <p><a href="/users/<%= profile['id'] %>"><%= profile['username'] %></a></p>
+                            <br>
+                            <p>Content posted: <%= count_content_created_by_user_id(profile['id']) %></p>
+                        </div>
                     </section>
                     
                     <% if three_row == 3 %>

@@ -7,8 +7,12 @@ CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username TEXT,
     email TEXT,
+    profile_image_url TEXT,
     password_digest TEXT
 );
+
+-- add in profile_url
+ALTER TABLE users ADD COLUMN profile_image_url TEXT;
 
 -- Reset Users table
 TRUNCATE TABLE users;

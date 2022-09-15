@@ -164,6 +164,8 @@ footer a {
 }
 
 .content-display-gallery-content-column img {
+    display: block;
+    margin: 0 auto;
     width: fit-content;
     max-width: 290px;
     max-height: 350px;
@@ -182,6 +184,16 @@ footer a {
 .view-content-creator-controls button {
     height: 35px;
     width: 100px;
+}
+
+.profile-data {
+    display: flex;
+    gap: 2rem;
+}
+
+.profile-image {
+    height: 300px;
+    width: fit-content;
 }
 
 

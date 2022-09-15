@@ -43,7 +43,7 @@ post '/contents' do
     if content_type == "image"
         is_image = true
         image_upload = Cloudinary::Uploader.upload(content['tempfile'],
-            :folder => "fluffyart-cdn/img/",
+            :folder => "fluffyart-cdn/#{user_id}/",
             :use_filename => true,
             :overwrite => true,
             :resource_type => "image")

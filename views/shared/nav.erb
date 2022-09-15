@@ -8,6 +8,7 @@
     <div class="right-nav">
         <% if logged_in? %>
             <p>Welcome, <a href="/users/<%= current_user['id'] %>"><%= current_user['username'] %></a>!</p>
+            <p><a href="/users/edit">Settings</a></p>
             <section class="controls">
                 <form action="/sessions" method="POST">
                     <input type="hidden" name="_method" value="delete">
