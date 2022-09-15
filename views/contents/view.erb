@@ -38,7 +38,7 @@
                 <h3>Content Editor</h3>
                 <%# <p><a href="/contents/<%= content['id'] % > /edit">Edit</a></p> %>
                 <div class="view-content-creator-controls">
-                    <form action="/contents/<%= content['id'] %>/edit" method="POST">
+                    <form action="/contents/<%= content['id'] %>/edit" method="GET">
                         <button>Edit</button>
                     </form>
                     <form action="/contents/<%= content['id'] %>" method="POST">

@@ -23,7 +23,7 @@ def get_content(id)
     run_sql("SELECT * FROM contents WHERE id = $1", [id])[0]
 end
 
-def update_content(id, title, content, is_image, is_html)
+def update_content(id, title, content, content_description, is_image, is_html)
     run_sql("UPDATE contents SET edit_timestamp = now(), title = $2, content = $3, content_description = $4, is_image = $5, is_html = $6 WHERE id = $1", [id, title, content, content_description, is_image, is_html])
 end
 

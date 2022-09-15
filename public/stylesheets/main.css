@@ -53,7 +53,12 @@ h1, h2, h3 {
 }
 
 .view-content-description, .view-content-display-text {
-    padding: 1rem;
+    padding: 1.5rem;
+}
+
+.view-content-display-text {
+    margin: 0;
+    color: whitesmoke;
 }
 
 .view-sidebar {
